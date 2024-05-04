@@ -33,7 +33,20 @@ app.get('/about', (req, res) => {
     message: 'Learn more about our team and mission.'
   });
 });
+// 404 Not Found Handler
+app.use((req, res, next) => {
+  res.status(404).render('404', {
+    title: '404: Page Not Found'
+  });
+});
 
+// 500 Internal Server Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('500', {
+    title: '500: Internal Server Error'
+  });
+});
 // Start the server
 const PORT = 3000; // Set the port number directly
 app.listen(PORT, () => {
