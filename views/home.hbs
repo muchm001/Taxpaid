@@ -1,0 +1,15 @@
+{{!-- Use the main layout defined in layouts/main.hbs --}}
+{{!< main }}
+
+{{!-- Page content specific to the Home view --}}
+<section class="container mt-5">
+    <h1 class="display-4">Welcome to Our Homepage</h1>
+    <p class="lead">This is the main content of the homepage. It will be rendered inside the main tag of the layout.</p>
+
+    {{!-- Dynamic message passed from the server --}}
+    <div class="alert alert-success" role="alert">
+        {{message}}
+    </div>
+
+    <p>Explore more about our project and its features through the navigation links.</p>
+</section>
